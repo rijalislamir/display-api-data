@@ -1,11 +1,11 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 import axios from "axios";
 
-export const getUsers = createAsyncThunk(
-    "user/getUsers", 
+export const getAlbums = createAsyncThunk(
+    "album/getAlbums", 
     async () => {
         try {
-            const response = await axios.get("https://jsonplaceholder.typicode.com/users")
+            const response = await axios.get("https://jsonplaceholder.typicode.com/albums")
             return response.data
         } catch (error) {
             console.error(error)
@@ -21,23 +21,23 @@ const initialState = {
     message: ""
 }
 
-export const userSlice = createSlice({
-    name: "user",
+export const albumSlice = createSlice({
+    name: "album",
     initialState,
     extraReducers: (builder) => {
         builder
-            .addCase(getUsers.fulfilled, (state, action) => {
+            .addCase(getAlbums.fulfilled, (state, action) => {
                 state.all = action.payload
                 state.isLoading = false
                 state.isSuccess = true
                 state.isError = false
             })
-            .addCase(getUsers.pending, (state, action) => {
+            .addCase(getAlbums.pending, (state, action) => {
                 state.isLoading = true
                 state.isSuccess = false
                 state.isError = false
             })
-            .addCase(getUsers.rejected, (state, action) => {
+            .addCase(getAlbums.rejected, (state, action) => {
                 state.isLoading = false
                 state.isSuccess = false
                 state.isError = true
@@ -45,6 +45,6 @@ export const userSlice = createSlice({
     }
 })
 
-export const selectUsers = state => state.user.all
+export const selectAlbums = state => state.album.all
 
-export default userSlice.reducer
+export default albumSlice.reducer

@@ -1,23 +1,16 @@
-import React, { useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { getUsers, selectUsers } from './store/userSlice'
+import React, { useState} from 'react'
 import './App.css'
 
-function App() {
-	const dispatch = useDispatch()
-	const users = useSelector(selectUsers)
+import Menu from './components/Menu'
+import Content from './components/Content'
 
-	useEffect(() => {
-		dispatch(getUsers())
-	}, [])
+function App() {
+	const [show, setShow] = useState("users")
 
 	return (
 		<div>
-			{users.map((user, i) => 
-				<div key={"user-"+i}>
-					{user.name}
-				</div>
-			)}
+			<Menu setShow={setShow} />
+			<Content show={show} />
 		</div>
 	)
 }

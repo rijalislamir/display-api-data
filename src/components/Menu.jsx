@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { getUsers } from '../store/userSlice'
 import { getPosts } from '../store/postSlice'
@@ -11,16 +11,20 @@ const Menu = ({ setShow }) => {
         setShow("users")
         dispatch(getUsers())
     }
-
+    
     const handlePostsMenu = () => {
         setShow("posts")
         dispatch(getPosts())
     }
-
+    
     const handleAlbumsMenu = () => {
         setShow("albums")
         dispatch(getAlbums())
     }
+    
+    useEffect(() => {
+        dispatch(getUsers())
+    }, [])
 
     return (
         <div>

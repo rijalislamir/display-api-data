@@ -8,7 +8,7 @@ function App() {
 	const [show, setShow] = useState("users")
 
 	return (
-		<div className='flex flex-col min-h-screen'>
+		<div className='flex flex-col min-h-screen md:flex-row'>
 			<Menu setShow={setShow} />
 			<Content show={show} />
 		</div>

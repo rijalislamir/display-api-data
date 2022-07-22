@@ -28,10 +28,10 @@ const Menu = ({ setShow }) => {
 
     return (
         <>
-            <ul className='flex justify-evenly p-4 font-bold'>
-                <li className='cursor-pointer' onClick={handleUsersMenu}>Users</li>
-                <li className='cursor-pointer' onClick={handlePostsMenu}>Posts</li>
-                <li className='cursor-pointer' onClick={handleAlbumsMenu}>Albums</li>
+            <ul className='flex justify-evenly p-4 font-bold md:flex-col md:justify-start md:items-center md:w-80 md:fixed'>
+                <li className='cursor-pointer md:py-4' onClick={handleUsersMenu}>Users</li>
+                <li className='cursor-pointer md:py-4' onClick={handlePostsMenu}>Posts</li>
+                <li className='cursor-pointer md:py-4' onClick={handleAlbumsMenu}>Albums</li>
             </ul>
         </>
     )

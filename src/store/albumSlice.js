@@ -46,5 +46,6 @@ export const albumSlice = createSlice({
 })
 
 export const selectAlbums = state => state.album.all
+export const isAlbumsLoading = state => state.album.isLoading
 
 export default albumSlice.reducer

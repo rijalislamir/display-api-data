@@ -46,5 +46,6 @@ export const userSlice = createSlice({
 })
 
 export const selectUsers = state => state.user.all
+export const isUsersLoading = state => state.user.isLoading
 
 export default userSlice.reducer

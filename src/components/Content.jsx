@@ -6,7 +6,7 @@ import Albums from './Albums'
 
 const Content = ({ show }) => {
     return (
-        <div className='p-4'>
+        <div className='grow flex flex-col justify-center p-4'>
             <Users show={show} />
             <Posts show={show} />
             <Albums show={show} />

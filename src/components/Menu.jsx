@@ -27,13 +27,13 @@ const Menu = ({ setShow }) => {
     }, [])
 
     return (
-        <div>
+        <>
             <ul className='flex justify-evenly p-4 font-bold'>
                 <li className='cursor-pointer' onClick={handleUsersMenu}>Users</li>
                 <li className='cursor-pointer' onClick={handlePostsMenu}>Posts</li>
                 <li className='cursor-pointer' onClick={handleAlbumsMenu}>Albums</li>
             </ul>
-        </div>
+        </>
     )
 }
 
